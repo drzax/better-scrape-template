@@ -20,3 +20,12 @@ Data can be stored anywhere you like in the repository. The template is setup to
 You may need to update the permissions on the new repository to allow workflows to make commits to the repository.
 
 ![In settings -> actions -> general look for the setting that says 'Read and write permissions' under the heading 'Workflow permissions'](https://user-images.githubusercontent.com/596563/235338137-57b78eb4-a573-40c0-a77a-a132787288bf.png)
+
+## Using the scraped data
+
+The way this scraper works by default is to update the data as JSON a file in the repository, so the repo always
+contains the latest version of the data, but the repository history contains a full history of the data from when
+scraping began. 
+
+This makes a time series analysis of the data possible, though not exactly straight forward. The
+[`git-history`](https://datasette.io/tools/git-history) tool can be used to extract the full history into an SQLite database.
